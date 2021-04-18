@@ -1,0 +1,44 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css);
+        
+body {
+    background-color: #222;
+    color: #ddd;
+    width: 80%;
+    margin: auto;
+
+}
+
+*{
+    font-family: hack;
+}
+a {
+    text-decoration: none;
+    color: lightgreen;
+}
+a:hover {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ff00
+}
+#cabeca {
+    text-align: center;
+}
+
+#gui{
+    border-radius: 100px;
+}
+
+#divindice{
+    padding: 10px;
+    border: 1px #fff solid;
+}
+
+#divDescricao{
+    border: 1px #fff solid;
+    padding: 10px;
+}
+
+#divcontato {
+    border: 1px #fff solid;
+    padding: 10px;
+}
