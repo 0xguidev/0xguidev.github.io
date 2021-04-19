@@ -5,11 +5,16 @@ body {
     color: #ddd;
     width: 80%;
     margin: auto;
-
 }
-
 *{
     font-family: hack;
+}
+h1 {
+   text-align: center; 
+}
+#divindice{
+    padding: 20px;
+    border: 1px #fff solid;
 }
 a {
     text-decoration: none;
@@ -20,25 +25,48 @@ a:hover {
     font-weight: bold;
     color: #00ff00
 }
-#cabeca {
-    text-align: center;
+#conDescricao{
+    border: 1px #fff solid;
+    position: relative;
 }
-
 #gui{
-    border-radius: 100px;
+    padding: 15px;
+    border-radius: 150px;
+    float: left;
+    width: 25%;
 }
 
-#divindice{
-    padding: 10px;
-    border: 1px #fff solid;
+#cabeca {
+    border: 1px solid #fff;
+    text-align: center;
+    float: right;
+    width: 100%;
 }
+#hardskills{
 
-#divDescricao{
-    border: 1px #fff solid;
-    padding: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    top: 220px;
+    
+}
+#softskills{
+ position: absolute;
+ border: 1px #fff solid;
+ width: 50%;   
+ box-sizing: border-box;
+ top:220px;
+ right: 0px;
+ padding-bottom: 60px;
+ text-align: center;
+ 
+
 }
 
 #divcontato {
+    padding: 20px;
     border: 1px #fff solid;
     padding: 10px;
 }
