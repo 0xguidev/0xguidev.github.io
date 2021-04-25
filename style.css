@@ -1,0 +1,10 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/hack-font/4.3.0/web/hack.min.css);
+
+body {
+    font-family: hack;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+}
