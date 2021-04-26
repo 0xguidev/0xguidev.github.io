@@ -25,43 +25,32 @@ a:hover {
     font-weight: bold;
     color: #00ff00
 }
-#conDescricao{
-    border: 1px #fff solid;
-    position: relative;
-}
+
 #gui{
     padding: 15px;
     border-radius: 150px;
     float: left;
-    width: 25%;
+    width: 250px;
 }
 
 #cabeca {
+    display: contents;
     border: 1px solid #fff;
     text-align: center;
     float: right;
     width: 100%;
 }
-#hardskills{
 
-    width: 50%;
-    box-sizing: border-box;
-    text-align: center;
-    bottom: 0px;
-    left: 0px;
-    top: 220px;
-    
+.habilidades {
+    display: flex;
+}
+
+#hardskills{
+    flex:1
+
 }
 #softskills{
- position: absolute;
- border: 1px #fff solid;
- width: 50%;   
- box-sizing: border-box;
- top:220px;
- right: 0px;
- padding-bottom: 60px;
- text-align: center;
- 
+    flex:2
 
 }
 
