@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { translations } from '@/lib/translations';
+import { useTranslation } from '@/lib/i18n-context';
 
 export function Contact({
   socialLinks,
@@ -14,6 +14,7 @@ export function Contact({
     email: string;
   };
 }) {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,33 +51,31 @@ export function Contact({
 
   return (
     <section id="contato" className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">{translations.contact.title}</h2>
+      <h2 className="text-3xl font-bold mb-4">{t('contact.title')}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <p className="mb-4">{translations.contact.description}</p>
+          <p className="mb-4">{t('contact.description')}</p>
           <div className="space-y-2">
             <a href={socialLinks.github} className="block hover:underline">
-              {translations.contact.github}: {socialLinks.github}
+              {t('contact.github')}: {socialLinks.github}
             </a>
             <a href={socialLinks.linkedin} className="block hover:underline">
-              {translations.contact.linkedin}: {socialLinks.linkedin}
+              {t('contact.linkedin')}: {socialLinks.linkedin}
             </a>
             <a href={socialLinks.twitter} className="block hover:underline">
-              {translations.contact.twitter}: {socialLinks.twitter}
+              {t('contact.twitter')}: {socialLinks.twitter}
             </a>
             <a
               href={`mailto:${socialLinks.email}`}
               className="block hover:underline"
             >
-              {translations.contact.email}: {socialLinks.email}
+              {t('contact.email')}: {socialLinks.email}
             </a>
           </div>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block mb-1">
-              {translations.contact.nameLabel}
-            </label>
+            <label className="block mb-1">{t('contact.nameLabel')}</label>
             <input
               type="text"
               name="name"
@@ -87,9 +86,7 @@ export function Contact({
             />
           </div>
           <div>
-            <label className="block mb-1">
-              {translations.contact.emailLabel}
-            </label>
+            <label className="block mb-1">{t('contact.emailLabel')}</label>
             <input
               type="email"
               name="email"
@@ -100,9 +97,7 @@ export function Contact({
             />
           </div>
           <div>
-            <label className="block mb-1">
-              {translations.contact.messageLabel}
-            </label>
+            <label className="block mb-1">{t('contact.messageLabel')}</label>
             <textarea
               name="message"
               value={formData.message}
@@ -117,15 +112,13 @@ export function Contact({
             disabled={status === 'sending'}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
           >
-            {status === 'sending'
-              ? translations.contact.sending
-              : translations.contact.send}
+            {status === 'sending' ? t('contact.sending') : t('contact.send')}
           </button>
           {status === 'success' && (
-            <p className="text-green-600">{translations.contact.success}</p>
+            <p className="text-green-600">{t('contact.success')}</p>
           )}
           {status === 'error' && (
-            <p className="text-red-600">{translations.contact.error}</p>
+            <p className="text-red-600">{t('contact.error')}</p>
           )}
         </form>
       </div>

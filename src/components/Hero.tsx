@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { translations } from '@/lib/translations';
+import { useTranslation } from '@/lib/i18n-context';
 
 export function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-4">
       <motion.h1
@@ -12,7 +14,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {translations.hero.title}
+        {t('hero.title')}
       </motion.h1>
       <motion.p
         className="text-xl mb-8 max-w-xl"
@@ -20,7 +22,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        {translations.hero.subtitle}
+        {t('hero.subtitle')}
       </motion.p>
       <motion.a
         href="#contato"
@@ -29,7 +31,7 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        {translations.hero.cta}
+        {t('hero.cta')}
       </motion.a>
     </section>
   );

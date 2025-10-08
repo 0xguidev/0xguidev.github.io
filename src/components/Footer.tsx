@@ -1,21 +1,25 @@
+'use client';
+
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
-import { translations } from '@/lib/translations';
+import { useTranslation } from '@/lib/i18n-context';
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="border-t bg-background">
       <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            {translations.footer.builtBy}{' '}
+            {t('footer.builtBy')}{' '}
             <Link
               href={siteConfig.socialLinks.github}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              {translations.common.name}
+              {t('common.name')}
             </Link>
             . Hospedado no{' '}
             <Link
@@ -24,7 +28,7 @@ export function Footer() {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              {translations.footer.poweredBy}
+              {t('footer.poweredBy')}
             </Link>
             .
           </p>
@@ -36,7 +40,7 @@ export function Footer() {
             rel="noreferrer"
             className="text-muted-foreground hover:text-foreground"
           >
-            {translations.contact.github}
+            {t('contact.github')}
           </Link>
           <Link
             href={siteConfig.socialLinks.linkedin}
@@ -44,7 +48,7 @@ export function Footer() {
             rel="noreferrer"
             className="text-muted-foreground hover:text-foreground"
           >
-            {translations.contact.linkedin}
+            {t('contact.linkedin')}
           </Link>
           <Link
             href={siteConfig.socialLinks.twitter}
@@ -52,7 +56,7 @@ export function Footer() {
             rel="noreferrer"
             className="text-muted-foreground hover:text-foreground"
           >
-            {translations.contact.twitter}
+            {t('contact.twitter')}
           </Link>
         </div>
       </div>

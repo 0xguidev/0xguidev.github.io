@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { translations } from '@/lib/translations';
+import { useTranslation } from '@/lib/i18n-context';
 
 export function About({
   bio,
@@ -18,15 +18,16 @@ export function About({
   }[];
 }) {
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   return (
     <section id="sobre" className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">{translations.about.title}</h2>
+      <h2 className="text-3xl font-bold mb-4">{t('about.title')}</h2>
       <p className="mb-6">{bio}</p>
 
       <div className="mb-8">
         <h3 className="text-2xl font-semibold mb-4">
-          {translations.about.skillsTitle}
+          {t('about.skillsTitle')}
         </h3>
         <div className="flex flex-wrap gap-2">
           {skills.map((skill) => (
@@ -42,7 +43,7 @@ export function About({
 
       <div>
         <h3 className="text-2xl font-semibold mb-4">
-          {translations.about.careerTitle}
+          {t('about.careerTitle')}
         </h3>
         <div className="space-y-4">
           {career.map((item) => (

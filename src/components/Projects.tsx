@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { translations } from '@/lib/translations';
+import { useTranslation } from '@/lib/i18n-context';
 
 export function Projects({
   projects,
@@ -15,6 +15,7 @@ export function Projects({
   }[];
 }) {
   const [filter, setFilter] = useState<string>('');
+  const { t } = useTranslation();
 
   const filteredProjects = filter
     ? projects.filter((project) => project.stack.includes(filter))
@@ -24,18 +25,16 @@ export function Projects({
 
   return (
     <section id="projetos" className="max-w-6xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">{translations.projects.title}</h2>
+      <h2 className="text-3xl font-bold mb-4">{t('projects.title')}</h2>
 
       <div className="mb-6">
-        <label className="block mb-2">
-          {translations.projects.filterLabel}
-        </label>
+        <label className="block mb-2">{t('projects.filterLabel')}</label>
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           className="border rounded p-2"
         >
-          <option value="">{translations.projects.all}</option>
+          <option value="">{t('projects.all')}</option>
           {allStacks.map((stack) => (
             <option key={stack} value={stack}>
               {stack}
@@ -50,9 +49,7 @@ export function Projects({
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
             <p className="mb-4">{project.description}</p>
             <div className="mb-4">
-              <h4 className="font-medium mb-1">
-                {translations.projects.stackTitle}
-              </h4>
+              <h4 className="font-medium mb-1">{t('projects.stackTitle')}</h4>
               <div className="flex flex-wrap gap-1">
                 {project.stack.map((tech) => (
                   <span
@@ -69,14 +66,14 @@ export function Projects({
                 href={project.github}
                 className="text-blue-600 hover:underline"
               >
-                {translations.projects.github}
+                {t('projects.github')}
               </a>
               {project.demo && (
                 <a
                   href={project.demo}
                   className="text-green-600 hover:underline"
                 >
-                  {translations.projects.demo}
+                  {t('projects.demo')}
                 </a>
               )}
             </div>
