@@ -28,8 +28,11 @@ export function Projects({
       <h2 className="text-3xl font-bold mb-4">{t('projects.title')}</h2>
 
       <div className="mb-6">
-        <label className="block mb-2">{t('projects.filterLabel')}</label>
+        <label htmlFor="stack-filter" className="block mb-2">
+          {t('projects.filterLabel')}
+        </label>
         <select
+          id="stack-filter"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           className="border rounded p-2"

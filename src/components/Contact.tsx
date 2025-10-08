@@ -75,8 +75,11 @@ export function Contact({
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block mb-1">{t('contact.nameLabel')}</label>
+            <label htmlFor="contact-name" className="block mb-1">
+              {t('contact.nameLabel')}
+            </label>
             <input
+              id="contact-name"
               type="text"
               name="name"
               value={formData.name}
@@ -86,8 +89,11 @@ export function Contact({
             />
           </div>
           <div>
-            <label className="block mb-1">{t('contact.emailLabel')}</label>
+            <label htmlFor="contact-email" className="block mb-1">
+              {t('contact.emailLabel')}
+            </label>
             <input
+              id="contact-email"
               type="email"
               name="email"
               value={formData.email}
@@ -97,8 +103,11 @@ export function Contact({
             />
           </div>
           <div>
-            <label className="block mb-1">{t('contact.messageLabel')}</label>
+            <label htmlFor="contact-message" className="block mb-1">
+              {t('contact.messageLabel')}
+            </label>
             <textarea
+              id="contact-message"
               name="message"
               value={formData.message}
               onChange={handleChange}
