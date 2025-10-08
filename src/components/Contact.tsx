@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { translations } from '@/lib/translations';
 
 export function Contact({
   socialLinks,
@@ -49,33 +50,33 @@ export function Contact({
 
   return (
     <section id="contato" className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">Contato</h2>
+      <h2 className="text-3xl font-bold mb-4">{translations.contact.title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <p className="mb-4">
-            Entre em contato comigo através do formulário ou redes sociais.
-          </p>
+          <p className="mb-4">{translations.contact.description}</p>
           <div className="space-y-2">
             <a href={socialLinks.github} className="block hover:underline">
-              GitHub: {socialLinks.github}
+              {translations.contact.github}: {socialLinks.github}
             </a>
             <a href={socialLinks.linkedin} className="block hover:underline">
-              LinkedIn: {socialLinks.linkedin}
+              {translations.contact.linkedin}: {socialLinks.linkedin}
             </a>
             <a href={socialLinks.twitter} className="block hover:underline">
-              Twitter: {socialLinks.twitter}
+              {translations.contact.twitter}: {socialLinks.twitter}
             </a>
             <a
               href={`mailto:${socialLinks.email}`}
               className="block hover:underline"
             >
-              Email: {socialLinks.email}
+              {translations.contact.email}: {socialLinks.email}
             </a>
           </div>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block mb-1">Nome</label>
+            <label className="block mb-1">
+              {translations.contact.nameLabel}
+            </label>
             <input
               type="text"
               name="name"
@@ -86,7 +87,9 @@ export function Contact({
             />
           </div>
           <div>
-            <label className="block mb-1">Email</label>
+            <label className="block mb-1">
+              {translations.contact.emailLabel}
+            </label>
             <input
               type="email"
               name="email"
@@ -97,7 +100,9 @@ export function Contact({
             />
           </div>
           <div>
-            <label className="block mb-1">Mensagem</label>
+            <label className="block mb-1">
+              {translations.contact.messageLabel}
+            </label>
             <textarea
               name="message"
               value={formData.message}
@@ -112,15 +117,15 @@ export function Contact({
             disabled={status === 'sending'}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
           >
-            {status === 'sending' ? 'Enviando...' : 'Enviar'}
+            {status === 'sending'
+              ? translations.contact.sending
+              : translations.contact.send}
           </button>
           {status === 'success' && (
-            <p className="text-green-600">Mensagem enviada com sucesso!</p>
+            <p className="text-green-600">{translations.contact.success}</p>
           )}
           {status === 'error' && (
-            <p className="text-red-600">
-              Erro ao enviar mensagem. Tente novamente.
-            </p>
+            <p className="text-red-600">{translations.contact.error}</p>
           )}
         </form>
       </div>

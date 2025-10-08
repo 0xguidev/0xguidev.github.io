@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { translations } from '@/lib/translations';
 
 export function Blog() {
   // Placeholder for blog posts - in a real app, fetch from content folder
@@ -21,7 +22,7 @@ export function Blog() {
 
   return (
     <section id="blog" className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">Blog / Artigos</h2>
+      <h2 className="text-3xl font-bold mb-4">{translations.blog.title}</h2>
       <div className="space-y-6">
         {posts.map((post) => (
           <article key={post.slug} className="border-b pb-4">

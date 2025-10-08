@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { translations } from '@/lib/translations';
 
 export function Hero() {
   return (
@@ -11,7 +12,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Guilherme
+        {translations.hero.title}
       </motion.h1>
       <motion.p
         className="text-xl mb-8 max-w-xl"
@@ -19,7 +20,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Desenvolvedor Full Stack | Apaixonado por Tecnologia
+        {translations.hero.subtitle}
       </motion.p>
       <motion.a
         href="#contato"
@@ -28,7 +29,7 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        Entre em contato
+        {translations.hero.cta}
       </motion.a>
     </section>
   );

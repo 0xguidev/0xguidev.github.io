@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { translations } from '@/lib/translations';
 
 export function About({
   bio,
@@ -20,11 +21,13 @@ export function About({
 
   return (
     <section id="sobre" className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">Sobre Mim</h2>
+      <h2 className="text-3xl font-bold mb-4">{translations.about.title}</h2>
       <p className="mb-6">{bio}</p>
 
       <div className="mb-8">
-        <h3 className="text-2xl font-semibold mb-4">Skills</h3>
+        <h3 className="text-2xl font-semibold mb-4">
+          {translations.about.skillsTitle}
+        </h3>
         <div className="flex flex-wrap gap-2">
           {skills.map((skill) => (
             <span
@@ -38,7 +41,9 @@ export function About({
       </div>
 
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Trajetória de Carreira</h3>
+        <h3 className="text-2xl font-semibold mb-4">
+          {translations.about.careerTitle}
+        </h3>
         <div className="space-y-4">
           {career.map((item) => (
             <div key={item.year} className="border-l-4 border-blue-500 pl-4">

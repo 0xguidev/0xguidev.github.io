@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://0xguidev.github.io
+
+# Sitemaps
+Sitemap: https://0xguidev.github.io/sitemap.xml
