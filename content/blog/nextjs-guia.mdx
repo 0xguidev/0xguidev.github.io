@@ -1,0 +1,42 @@
+---
+title: 'Guia Completo do Next.js'
+excerpt: 'Tudo que você precisa saber sobre Next.js, o framework React para produção.'
+date: '2023-09-15'
+tags: ['Next.js', 'React', 'SSR']
+---
+
+# Guia Completo do Next.js
+
+Next.js é um framework React que oferece funcionalidades como renderização do lado do servidor (SSR), geração de sites estáticos e muito mais.
+
+## Principais Recursos
+
+### SSR e SSG
+
+- **Server-Side Rendering (SSR)**: Renderiza páginas no servidor para melhor SEO e performance inicial.
+- **Static Site Generation (SSG)**: Gera páginas estáticas em tempo de build.
+
+### Roteamento Automático
+
+O Next.js oferece roteamento baseado em arquivo. Crie uma página em `pages/index.js` e ela estará disponível em `/`.
+
+### API Routes
+
+Crie APIs diretamente na pasta `pages/api/`.
+
+```javascript
+// pages/api/hello.js
+export default function handler(req, res) {
+  res.status(200).json({ message: 'Olá, mundo!' });
+}
+```
+
+## Começando
+
+1. Instale o Next.js: `npx create-next-app`
+2. Execute o servidor de desenvolvimento: `npm run dev`
+3. Abra [http://localhost:3000](http://localhost:3000) no navegador
+
+## Conclusão
+
+Next.js é uma excelente escolha para aplicações React em produção, oferecendo performance e SEO otimizados.
