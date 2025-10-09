@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/lib/i18n-context';
+import { Terminal } from './Terminal';
+import { ThreeDLogo } from './ThreeDLogo';
 
 export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 space-y-8">
       <motion.h1
         className="text-5xl font-bold mb-4"
         initial={{ opacity: 0, y: -50 }}
@@ -17,7 +19,7 @@ export function Hero() {
         {t('hero.title')}
       </motion.h1>
       <motion.p
-        className="text-xl mb-8 max-w-xl"
+        className="text-xl max-w-xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -33,6 +35,10 @@ export function Hero() {
       >
         {t('hero.cta')}
       </motion.a>
+      <div className="w-full max-w-4xl flex flex-col md:flex-row gap-8 mt-8">
+        <Terminal />
+        <ThreeDLogo />
+      </div>
     </section>
   );
 }

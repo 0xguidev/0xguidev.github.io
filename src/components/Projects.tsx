@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslation } from '@/lib/i18n-context';
+import { motion } from 'framer-motion';
 
 export function Projects({
   projects,
@@ -47,8 +48,15 @@ export function Projects({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((project) => (
-          <div key={project.title} className="border rounded-lg p-4 shadow">
+        {filteredProjects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            className="border rounded-lg p-4 shadow"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
             <p className="mb-4">{project.description}</p>
             <div className="mb-4">
@@ -80,7 +88,7 @@ export function Projects({
                 </a>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
