@@ -2,13 +2,14 @@
   "name": "0xguidev.github.io",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx src",
     "format": "prettier --write .",
-    "test": "vitest",
+    "test": "vitest --run",
     "prepare": "husky",
     "postbuild": "next-sitemap"
   },
