@@ -5,4 +5,4 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 };
 
-module.exports = nextConfig;
+export default nextConfig;
