@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "test": "vitest --run",
     "prepare": "husky",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap --config next-sitemap.config.cjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
