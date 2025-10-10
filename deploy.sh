@@ -6,7 +6,7 @@ echo "Instalando dependências..."
 npm install
 
 echo "Executando testes..."
-pnpm test
+npm test
 
 echo "Construindo o projeto..."
 npm run build
