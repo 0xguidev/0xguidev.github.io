@@ -3,13 +3,13 @@
 set -e
 
 echo "Instalando dependências..."
-pnpm install
+npm install
 
 echo "Executando testes..."
-pnpm test --run
+npm test
 
 echo "Construindo o projeto..."
-pnpm build
+npm run build
 
 echo "Verificando se há mudanças..."
 if git diff --quiet && git diff --staged --quiet; then
