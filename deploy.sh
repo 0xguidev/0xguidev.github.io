@@ -6,7 +6,7 @@ echo "Instalando dependências..."
 pnpm install
 
 echo "Executando testes..."
-pnpm test
+pnpm test --run
 
 echo "Construindo o projeto..."
 pnpm build
